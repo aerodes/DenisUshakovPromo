@@ -180,6 +180,25 @@ p{
     margin: 45px;
     width: 25%;
 }
+.tool_cotainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.icon-tool{
+    margin: 20px;
+}
+.text-tool{
+    font-family: "Gilroy-Medium";
+    text-align: center;
+}
+.icon-star-tool{
+    margin: 40px;
+}
+.stars-icon-tool{
+    margin: 5px;
+}
 /* section 4 Portfolio*/
 .portfolio{
     background: #F6F6F6;
