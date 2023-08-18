@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/node_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Denis Novik</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav" id="nav">
+            <a class="menu-link" href="#">Home</a>
+            <a class="menu-link" href="#">About me</a>
+            <a class="menu-link" href="#">Skills</a>
+            <a class="menu-link" href="#">Portfolio</a>
+            <a class="menu-link" href="#">Contacts</a>
+            <div class="plag" id="plag"></div>
+        </nav>
+        <button class="nav-toggle" type="button" id="nav-toggle">
+            <span class="nav-toggle-item" id="nav-toggle-item"></span>
+        </button>
+        <hr class="hr-menu">
+    </header>
+    <section class="author" id="author">
+        <div class="name-author">
+            <p>Denis</p>
+            <p>Novik</p>
+        </div>
+        <div class="info-author">
+            <p>UX | UI designer</p>
+            <p>24 years old, Minsk</p>
+        </div>
+        <div class="switch-language" id="switch-language">
+            <span class="switch-ru" id="switch-ru">RU</span>
+            <span class="vertic-line"></span>
+            <span class="switch-eng" id="switch-eng">ENG</span>
+        </div>
+        <img class="photo-author" src="images/Denis_Novik.png" alt="Photo Denis Novik">
+    </section>
+    <section class="about-author" id="#about-me">
+        <h1 class="section-name"> About me</h1>
+        <h2 class="section-text indented-text">Hi, I'm Denis – UX/UI designer from Minsk.<br> I'm interested in design and everything connected with it.</h2>
+        <h2 class="section-text indented-text">I'm studying at courses "Web and mobile design<br>interfaces" in IT-Academy.</h2>
+        <h2 class="section-text indented-text">Ready to implement excellent projects<br>with wonderful people.</h2>
+    </section>
+    <section class="skills" id="#skills">
+        <h1 class="section-name">Skills</h1>
+        <h2 class="section-text">I work in such programs as</h2>
+        <div class="photo-tools">
+            <img src="images/programs/photoshop.png" alt="" class="tools">
+            <img src="images/programs/illustrator.png" alt="" class="tools">
+            <img src="images/programs/after-effects.png" alt="" class="tools">
+            <img src="images/programs/figma.png" alt="" class="tools">
+        </div>
+    </section>
+    <section class="portfolio" id="#portfolio">
+        <h1 class="section-name">Portfolio</h1>
+        <img src="images/portfolio/online_fashion_store.png" alt="" class="example">
+        <h2 class="section-text link-work">Online fashion store - Homepage</h2>
+        <img src="images/portfolio/reebok_store.png" alt="" class="example">
+        <h2 class="section-text link-work">Reebok Store - Concept</h2>
+        <img src="images/portfolio/braun_landing_page.png" alt="" class="example">
+        <h2 class="section-text link-work">Braun Landing Page - Concept</h2>
+    </section>
+    <footer class="footer" id="#contacts">
+        <h1 class="section-name contsacts-text">Contacts</h1>
+        <h2 class="section-text">Want to know more or just chat? <br> You are welcome!</h2>
+        <button class="send-massege_button">Send message</button>
+        <div class="photo-icon">
+            <img src="images/contacts_icon/linkedin.svg" alt="" class="contact-icon">
+            <img src="images/contacts_icon/instagram.svg" alt="" class="contact-icon">
+            <img src="images/contacts_icon/behance.svg" alt="" class="contact-icon">
+            <img src="images/contacts_icon/dribble.svg" alt="" class="contact-icon">
+        </div>
+        <h3 class="like-me-text section-text">Like me on <br> LinkedIn, Instagram, Behance, Dribble</h3>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="js/App.js"></script>
+</body>
+</html>
