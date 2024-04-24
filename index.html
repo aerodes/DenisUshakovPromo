@@ -12,22 +12,28 @@
   <script>
     const tg = window.Telegram.WebApp;
 
-    const biometric = tg.BiometricManager.init();
+    const biometric = tg.BiometricManager.init(function () {
+      if (!tg.BiometricManager.isAccessGranted) {
+        tg.BiometricManager.requestAccess("Нада дать доступ к биометрии", function () {
+          if (tg.BiometricManager.isAccessGranted) {
+            tg.BiometricManager.authenticate("Просто так", function () {
+              document.body.textContent = "Аутентификация прошла";
+            })
+          }
+        });
+      } else {
+        tg.BiometricManager.authenticate("Просто так", function () {
+          document.body.textContent = "Аутентификация прошла";
+        });
+      }
+    });
+
+    
     const mainButton = tg.MainButton;
 
     // biometric.init();
 
-    if (!biometric.isAccessGranted) {
-      biometric.requestAccess("Нада дать доступ к биометрии", function () {
-        if (biometric.isAccessGranted) {
-          biometric.authenticate("Просто так", function () {
-            document.body.textContent = "Аутентификация прошла";
-          })
-        }
-      });
-    } else biometric.authenticate("Просто так", function () {
-            document.body.textContent = "Аутентификация прошла";
-          })
+
 
     mainButton.text = "Отправить";
     mainButton.color = "#257AE8";
