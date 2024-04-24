@@ -17,23 +17,26 @@
         tg.BiometricManager.requestAccess("Нада дать доступ к биометрии", function () {
           if (tg.BiometricManager.isAccessGranted) {
             tg.BiometricManager.authenticate("Просто так", function () {
-              document.body.textContent = "Аутентификация прошла";
-              document.body.style.fontSize = "48px";
-              document.body.style.color = "#000";
-              document.body.style.background = "#fff";
+              document.body.appendChild(notificationAuth());
             })
           }
         });
       } else {
         tg.BiometricManager.authenticate("Просто так", function () {
-          document.body.textContent = "Аутентификация прошла";
-          document.body.style.fontSize = "48px";
-          document.body.style.color = "#000";
-          document.body.style.background = "#fff";
+          document.body.appendChild(notificationAuth());
         });
       }
     });
 
+    function notificationAuth() {
+      const div = document.createElement("div");
+      div.innerText = "Аутентификация прошла";
+      div.style.color = "#000000";
+      div.style.background = "#ffffff";
+      div.style.height = "100vh";
+
+      return div;
+    }
 
     const mainButton = tg.MainButton;
 
@@ -57,6 +60,14 @@
       }, 5000)
     })
   </script>
+  <style>
+    *, body {
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+    }
+  </style>
 </head>
 
 <body>
