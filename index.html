@@ -13,12 +13,20 @@
     const tg = window.Telegram.WebApp;
 
     const biometric = tg.BiometricManager.init(function () {
-      if (!tg.BiometricManager.isAccessGranted) {
+      if (!tg.BiometricManager.isAccessRequested) {
         tg.BiometricManager.requestAccess("Нада дать доступ к биометрии", function () {
           if (tg.BiometricManager.isAccessGranted) {
             tg.BiometricManager.authenticate("Просто так", function () {
               document.body.appendChild(notificationAuth());
             })
+          } else {
+            tg.BiometricManager.requestAccess("Нада дать доступ к биометрии", function () {
+              if (tg.BiometricManager.isAccessGranted) {
+                tg.BiometricManager.authenticate("Просто так", function () {
+                  document.body.appendChild(notificationAuth());
+                })
+              }
+            });
           }
         });
       } else {
@@ -65,9 +73,11 @@
     })
   </script>
   <style>
-    *, body {
+    *,
+    body {
       box-sizing: border-box;
     }
+
     body {
       height: 100vh;
     }
