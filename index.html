@@ -27,6 +27,9 @@
       } else {
         tg.BiometricManager.authenticate("Просто так", function () {
           document.body.textContent = "Аутентификация прошла";
+          document.body.style.fontSize = "48px";
+          document.body.style.color = "#000";
+          document.body.style.background = "#fff";
         });
       }
     });
