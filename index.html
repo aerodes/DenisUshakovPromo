@@ -11,18 +11,18 @@
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <script>
     const tg = window.Telegram.WebApp;
-    tg.MainButton.text = "onClick";
+    tg.MainButton.text = "onClic";
     tg.MainButton.color = "#6675c9";
     tg.MainButton.isProgressVisible = true;
     tg.MainButton.show();
-    tg.MainButton.showProgress(leaveActive);
+    tg.MainButton.showProgress(true);
 
-    Telegram.WebApp.onEvent('mainButtonClicked', function () {
-      tg.MainButton.showProgress();
-      setTimeout(() => {
-        tg.MainButton.showProgress(leaveActive);
-      }, 10000)
-    })
+    // Telegram.WebApp.onEvent('mainButtonClicked', function () {
+    //   tg.MainButton.showProgress();
+    //   setTimeout(() => {
+    //     tg.MainButton.showProgress(leaveActive);
+    //   }, 10000)
+    // })
   </script>
 </head>
 
