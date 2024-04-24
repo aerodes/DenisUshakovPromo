@@ -18,6 +18,9 @@
           if (tg.BiometricManager.isAccessGranted) {
             tg.BiometricManager.authenticate("Просто так", function () {
               document.body.textContent = "Аутентификация прошла";
+              document.body.style.fontSize = "48px";
+              document.body.style.color = "#000";
+              document.body.style.background = "#fff";
             })
           }
         });
@@ -28,7 +31,7 @@
       }
     });
 
-    
+
     const mainButton = tg.MainButton;
 
     // biometric.init();
@@ -41,7 +44,7 @@
 
 
 
-    tg.WebApp.onEvent('mainButtonClicked', function () {
+    mainButton.onClick(function () {
       mainButton.showProgress();
       mainButton.text = "Загрузка";
       mainButton.showProgress();
