@@ -12,10 +12,10 @@
   <script>
     const tg = window.Telegram.WebApp;
 
-    const biometric = tg.BiometricManager;
+    const biometric = tg.BiometricManager.init();
     const mainButton = tg.MainButton;
 
-    biometric.init();
+    // biometric.init();
 
     if (!biometric.isAccessGranted) {
       biometric.requestAccess("Нада дать доступ к биометрии", function () {
