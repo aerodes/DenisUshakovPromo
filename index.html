@@ -30,10 +30,14 @@
 
     function notificationAuth() {
       const div = document.createElement("div");
+      const style = div.style;
       div.innerText = "Аутентификация прошла";
-      div.style.color = "#000000";
-      div.style.background = "#ffffff";
-      div.style.height = "100vh";
+      style.color = "#000000";
+      style.background = "#ffffff";
+      style.height = "100vh";
+      style.fontSize = "60px";
+      style.textAlign = "center";
+      style.padding = "50% 0 50% 0";
 
       return div;
     }
