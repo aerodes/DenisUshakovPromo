@@ -57,16 +57,19 @@
 
 
     mainButton.text = "Отправить";
-    // mainButton.color = "#257AE8";
-    mainButton.color = "#ffffff";
+    mainButton.color = "#257AE8";
+    // mainButton.color = "#ffffff";
     mainButton.show();
 
 
 
     mainButton.onClick(function () {
-      mainButton.showProgress();
-      mainButton.text = "Загрузка";
-      mainButton.showProgress();
+      mainButton.hide();
+      setTimeout(() => {
+        mainButton.showProgress();
+        mainButton.text = "Загрузка";
+        mainButton.showProgress();
+      }, 2500)
       setTimeout(() => {
         mainButton.hideProgress();
         mainButton.text = "Отправить";
