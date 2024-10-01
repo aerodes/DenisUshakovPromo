@@ -3,7 +3,7 @@ import Template from "./pages";
 import "./style.scss";
 
 document.addEventListener("DOMContentLoaded", function () {
-  ReactDOM.createRoot(document.getElementById("root")).render(
+  ReactDOM.createRoot(document.getElementById("root") as Element).render(
     <Template />
   );
 });
