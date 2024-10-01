@@ -15,7 +15,7 @@ jobs:
       - name: NodeJS setup
         uses: actions/setup-node@v1
         with:
-          node-version: v20.5.1.
+          node-version: 20.5.1
 
       - name: Dependecy installation
         run: npm install
