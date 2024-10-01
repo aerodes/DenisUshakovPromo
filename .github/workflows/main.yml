@@ -24,8 +24,8 @@ jobs:
         run: npm run build
 
       - name: Deploy prod
-        uses: JamesIves/github-pages-deoloy-action@4.1.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
           folder: dist
+          branch: gh-pages
 
