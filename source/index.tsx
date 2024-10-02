@@ -1,4 +1,4 @@
-import ReactDOM, { Container } from "react-dom/client";
+import ReactDOM from "react-dom/client";
 import Template from "./pages";
 import "./style.scss";
 
