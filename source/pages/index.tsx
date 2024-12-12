@@ -1,60 +1,53 @@
-import { useEffect, useState } from "react";
-import * as styles from "./index.module.scss";
+import React, { useState, useEffect } from "react";
+
+// Telegram Web App подключение
+const useTelegramWebApp = () => {
+  useEffect(() => {
+    // @ts-ignore
+    if (window.Telegram.WebApp) {
+      // @ts-ignore
+      const webApp = window.Telegram.WebApp;
+      webApp.ready(); // Уведомляем Telegram, что Mini App готово
+    }
+  }, []);
+};
 
 const Template = () => {
-  const [color, setColor] = useState("rgb(0, 0, 0,)");
+  useTelegramWebApp();
 
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
+  const [orientation, setOrientation] = useState({
+    alpha: null, // Угол вокруг оси Z
+    beta: null,  // Угол вокруг оси X
+    gamma: null, // Угол вокруг оси Y
+  });
 
-  setInterval(() => {
-    setColor(
-      `rgb(${getRandomInt(256)}, ${getRandomInt(256)}, ${getRandomInt(256)})`
-    );
-  }, 1000);
+  useEffect(() => {
+    const handleOrientation = (event) => {
+      setOrientation({
+        alpha: event.alpha?.toFixed(2), // Ограничиваем количество знаков
+        beta: event.beta?.toFixed(2),
+        gamma: event.gamma?.toFixed(2),
+      });
+    };
 
+    // Проверяем поддержку API
+    if (window.DeviceOrientationEvent) {
+      window.addEventListener("deviceorientation", handleOrientation);
+    } else {
+      console.warn("DeviceOrientation API не поддерживается этим устройством");
+    }
 
-  const [orient, setOrient] = useState("alpha: undefined, beta: undefined, gamma: undefined");
-  // @ts-ignore
-  // const tg = window?.Telegram?.WebApp;
-
-  const setBGColor = (webApp, color) => {
-    webApp.setBottomBarColor(color);
-  }
-
-
-
-  // useEffect(() => {
-  //   setBGColor(tg, "#ffffff");
-  // }, [])
-
-  // @ts-ignore
-  window?.Telegram?.WebApp.DeviceOrientation.start(20, false);
-
-  // 20, false, (orientation) => {
-  //   console.log(orientation);
-  //   setOrient(`alpha: ${orientation.alpha}, beta: ${orientation.beta}, gamma: ${orientation.gamma}`);
-  // }
-
-  // @ts-ignore
-  window.Telegram.WebApp.onEvent ("deviceOrientationChanged ", () => {
-    // @ts-ignore
-    console.log(window.Telegram.WebApp.DeviceOrientation);
-    // @ts-ignore
-    // setOrient(`alpha: ${tg.DeviceOrientation.alpha}, beta: ${tg.DeviceOrientation.beta}, gamma: ${tg.DeviceOrientation.gamma}`);
-  })
+    return () => {
+      window.removeEventListener("deviceorientation", handleOrientation);
+    };
+  }, []);
 
   return (
-    // <div className={styles["div"]} style={{ color: color, background: "#000" }}>
-    //   Кристина лучшая девушка!!!
-    // </div>
-    <div style={{ background: "#D4EFF7", height: "100vh", width: "100vw", padding: "60px 16px 16px 16px" }}>
-      {/* <div style={{ marginTop: "40px", width: "100%" }}>{`${initTG()?.initData}`}</div> */}
-      {/* <div style={{ marginTop: "40px" }}>{`${window?.Telegram?.WebApp?.initDataUnsafe?.user?.username}`}</div> */}
-      <div style={{ marginTop: "40px" }}>Загрузилось!!!</div>
-      {/* <div style={{ marginTop: "40px" }}>{orient}</div> */}
-      {/* <button onClick={() => initTG().downloadFile("https://i.pinimg.com/736x/82/2a/1d/822a1d20af7ef527f3dbb2636b1568e7.jpg")}>загрузить изображение</button> */}
+    <div style={{ padding: "16px", fontFamily: "Arial" }}>
+      <h1>Device Orientation</h1>
+      <p>Alpha (Z-axis): {orientation.alpha}</p>
+      <p>Beta (X-axis): {orientation.beta}</p>
+      <p>Gamma (Y-axis): {orientation.gamma}</p>
     </div>
   );
 };
