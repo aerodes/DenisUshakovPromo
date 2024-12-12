@@ -30,7 +30,7 @@ const Template = () => {
   }, [])
 
   const test = tg.DeviceOrientation.start();
-  setOrient(`alpha: ${test.alpha}, beta: ${test.beta}, gamma: ${test.gamma}`);
+  setOrient(`alpha: ${test?.alpha}, beta: ${test?.beta}, gamma: ${test?.gamma}`);
 
   // 20, false, (orientation) => {
   //   console.log(orientation);
