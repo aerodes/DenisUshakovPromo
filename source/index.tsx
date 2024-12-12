@@ -4,6 +4,13 @@ import "./style.scss";
 
 const root = document.getElementById("root");
 
+declare global {
+  interface Window {
+    userdata: any;
+    Telegram: any;
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   if (root) ReactDOM.createRoot(root).render(
     <Template />

@@ -50,5 +50,8 @@
   "moduleNameMapper": {
     "react-native$": "react-native-web",
     ".+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+  },
+  "dependencies": {
+    "@types/telegram-web-app": "^7.10.1"
   }
 }

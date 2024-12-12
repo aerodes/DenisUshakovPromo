@@ -13,10 +13,18 @@ const Template = () => {
       `rgb(${getRandomInt(256)}, ${getRandomInt(256)}, ${getRandomInt(256)})`
     );
   }, 1000);
+
+  const view = () => {
+    const tg = window.Telegram.WebApp;
+
+    return tg
+  }
+
   return (
-    <div className={styles["div"]} style={{ color: color, background: "#000" }}>
-      Кристина лучшая девушка!!!
-    </div>
+    // <div className={styles["div"]} style={{ color: color, background: "#000" }}>
+    //   Кристина лучшая девушка!!!
+    // </div>
+    <div style={{ background: "#D4EFF7", height: "100vh", width: "100vw" }}>{view().initData}</div>
   );
 };
 
