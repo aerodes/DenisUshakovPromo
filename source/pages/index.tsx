@@ -30,10 +30,9 @@ const Template = () => {
     setBGColor(initTG(), "#ffffff");
   }, [])
 
-  useEffect(() => {
-    initTG().DeviceOrientation.start(20, false, (orientation) => {
-      setOrient(`alpha: ${orientation.alpha}, beta: ${orientation.beta}, gamma: ${orientation.gamma}`)
-    })
+  initTG().DeviceOrientation.start(20, false, (orientation) => {
+    console.log(orientation);
+    setOrient(`alpha: ${orientation.alpha}, beta: ${orientation.beta}, gamma: ${orientation.gamma}`)
   })
 
   return (
