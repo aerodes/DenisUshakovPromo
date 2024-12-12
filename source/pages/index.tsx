@@ -23,6 +23,8 @@ const Template = () => {
     webApp.setBottomBarColor(color);
   }
 
+  
+
   useEffect(() => {
     setBGColor(tg, "#ffffff");
   }, [])
@@ -34,7 +36,8 @@ const Template = () => {
   //   setOrient(`alpha: ${orientation.alpha}, beta: ${orientation.beta}, gamma: ${orientation.gamma}`);
   // }
 
-  tg.onEvent ("deviceOrientationChanged ", function(){
+  // @ts-ignore
+  window.Telegram.WebApp.onEvent ("deviceOrientationChanged ", () => {
     // @ts-ignore
     console.log(tg.DeviceOrientation);
     // @ts-ignore
