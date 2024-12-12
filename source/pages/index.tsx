@@ -28,6 +28,7 @@ const Template = () => {
       <div style={{ marginTop: "40px", width: "100%" }}>{`${initTG()?.initData}`}</div>
       <div style={{ marginTop: "40px" }}>{`${initTG()?.initDataUnsafe?.user?.username}`}</div>
       <div style={{ marginTop: "40px" }}>Загрузилось!!!</div>
+      <button onClick={() => initTG().downloadFile("https://i.pinimg.com/736x/82/2a/1d/822a1d20af7ef527f3dbb2636b1568e7.jpg", "goodMorninig.jpg")}>загрузить изображение</button>
     </div>
   );
 };
