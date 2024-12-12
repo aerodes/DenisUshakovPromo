@@ -38,9 +38,10 @@ const Template = () => {
     // <div className={styles["div"]} style={{ color: color, background: "#000" }}>
     //   Кристина лучшая девушка!!!
     // </div>
-    <div style={{ background: "#D4EFF7", height: "100vh", width: "100vw" }}>
-      <div>{tg.initData}</div>
-      <button onClick={() => click()}>ссылка на Женю</button>
+    <div style={{ background: "#D4EFF7", height: "100vh", width: "100vw", padding: "60px 16px 16px 16px" }}>
+      <div style={{ marginTop: "40px" }}>{tg.initData}</div>
+      <div style={{ marginTop: "40px" }}>{tg.initDataUnsafe?.user}</div>
+      <button style={{ marginTop: "40px" }} onClick={() => click()}>ссылка на Женю</button>
     </div>
   );
 };
