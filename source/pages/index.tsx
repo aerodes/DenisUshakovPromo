@@ -29,7 +29,11 @@ const Template = () => {
     setBGColor(tg, "#ffffff");
   }, [])
 
-  tg.DeviceOrientation.start();
+  tg.DeviceOrientation.start(800, false, function(){
+    console.log(tg.DeviceOrientation);
+    // @ts-ignore
+    console.log(this);
+  });
 
   // 20, false, (orientation) => {
   //   console.log(orientation);
