@@ -15,7 +15,7 @@ const Template = () => {
   }, 1000);
 
 
-  const [orient, setOrient] = useState("alpha: undefined, beta: undefined, gamma: undefined")
+  const [orient, setOrient] = useState("alpha: undefined, beta: undefined, gamma: undefined");
   const initTG = () => {
     // @ts-ignore
     const tg = window?.Telegram?.WebApp;
@@ -41,7 +41,7 @@ const Template = () => {
     //   Кристина лучшая девушка!!!
     // </div>
     <div style={{ background: "#D4EFF7", height: "100vh", width: "100vw", padding: "60px 16px 16px 16px" }}>
-      <div style={{ marginTop: "40px", width: "100%" }}>{`${initTG()?.initData}`}</div>
+      {/* <div style={{ marginTop: "40px", width: "100%" }}>{`${initTG()?.initData}`}</div> */}
       <div style={{ marginTop: "40px" }}>{`${initTG()?.initDataUnsafe?.user?.username}`}</div>
       <div style={{ marginTop: "40px" }}>Загрузилось!!!</div>
       <div style={{ marginTop: "40px" }}>{orient}</div>
