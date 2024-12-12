@@ -30,9 +30,18 @@ const Template = () => {
     setBGColor(initTG(), "#ffffff");
   }, [])
 
-  initTG().DeviceOrientation.start(20, false, (orientation) => {
-    console.log(orientation);
-    setOrient(`alpha: ${orientation.alpha}, beta: ${orientation.beta}, gamma: ${orientation.gamma}`)
+  initTG().DeviceOrientation.start();
+
+  // 20, false, (orientation) => {
+  //   console.log(orientation);
+  //   setOrient(`alpha: ${orientation.alpha}, beta: ${orientation.beta}, gamma: ${orientation.gamma}`);
+  // }
+
+  initTG().onEvent ("deviceOrientationChanged ", function() {
+    // @ts-ignore
+    console.log(this);
+    // @ts-ignore
+    setOrient(`alpha: ${this.alpha}, beta: ${this.beta}, gamma: ${this.gamma}`)
   })
 
   return (
