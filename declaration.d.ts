@@ -15,3 +15,9 @@ declare module "*.pdf" {
   const content: string;
   export default content;
 }
+
+declare global {
+  interface Window {
+    Telegram: any;
+  }
+}

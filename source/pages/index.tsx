@@ -15,6 +15,7 @@ const Template = () => {
   }, 1000);
 
   const view = () => {
+    // @ts-ignore
     const tg = window.Telegram.WebApp;
 
     return tg
