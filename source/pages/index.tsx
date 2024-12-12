@@ -25,7 +25,7 @@ const Template = () => {
     //   Кристина лучшая девушка!!!
     // </div>
     <div style={{ background: "#D4EFF7", height: "100vh", width: "100vw", padding: "60px 16px 16px 16px" }}>
-      <div style={{ marginTop: "40px" }}>{`${initTG()?.initData}`}</div>
+      <div style={{ marginTop: "40px", width: "100%" }}>{`${initTG()?.initData}`}</div>
       <div style={{ marginTop: "40px" }}>{`${initTG()?.initDataUnsafe?.user?.username}`}</div>
       <div style={{ marginTop: "40px" }}>Загрузилось!!!</div>
     </div>
