@@ -29,10 +29,8 @@ const Template = () => {
     setBGColor(tg, "#ffffff");
   }, [])
 
-  const test = tg.DeviceOrientation.start(20, false);
-  setOrient(`alpha: ${null}, beta: ${null}, gamma: ${null}`);
-  console.log(test);
-
+  tg.DeviceOrientation.start(20, false);
+  
   // 20, false, (orientation) => {
   //   console.log(orientation);
   //   setOrient(`alpha: ${orientation.alpha}, beta: ${orientation.beta}, gamma: ${orientation.gamma}`);
