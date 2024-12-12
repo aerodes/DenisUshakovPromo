@@ -16,32 +16,29 @@ const Template = () => {
 
 
   const [orient, setOrient] = useState("alpha: undefined, beta: undefined, gamma: undefined");
-  const initTG = () => {
     // @ts-ignore
     const tg = window?.Telegram?.WebApp;
-    return tg
-  }
 
   const setBGColor = (webApp, color) => {
     webApp.setBottomBarColor(color);
   }
 
   useEffect(() => {
-    setBGColor(initTG(), "#ffffff");
+    setBGColor(tg, "#ffffff");
   }, [])
 
-  initTG().DeviceOrientation.start();
+  tg.DeviceOrientation.start();
 
   // 20, false, (orientation) => {
   //   console.log(orientation);
   //   setOrient(`alpha: ${orientation.alpha}, beta: ${orientation.beta}, gamma: ${orientation.gamma}`);
   // }
 
-  initTG().onEvent ("deviceOrientationChanged ", function() {
+  tg.onEvent ("deviceOrientationChanged ", function(){
     // @ts-ignore
-    console.log(this.DeviceOrientation);
+    console.log(tg.DeviceOrientation);
     // @ts-ignore
-    setOrient(`alpha: ${this.DeviceOrientation.alpha}, beta: ${this.DeviceOrientation.beta}, gamma: ${this.DeviceOrientation.gamma}`)
+    setOrient(`alpha: ${tg.DeviceOrientation.alpha}, beta: ${tg.DeviceOrientation.beta}, gamma: ${tg.DeviceOrientation.gamma}`)
   })
 
   return (
@@ -50,7 +47,7 @@ const Template = () => {
     // </div>
     <div style={{ background: "#D4EFF7", height: "100vh", width: "100vw", padding: "60px 16px 16px 16px" }}>
       {/* <div style={{ marginTop: "40px", width: "100%" }}>{`${initTG()?.initData}`}</div> */}
-      <div style={{ marginTop: "40px" }}>{`${initTG()?.initDataUnsafe?.user?.username}`}</div>
+      <div style={{ marginTop: "40px" }}>{`${tg?.initDataUnsafe?.user?.username}`}</div>
       <div style={{ marginTop: "40px" }}>Загрузилось!!!</div>
       <div style={{ marginTop: "40px" }}>{orient}</div>
       {/* <button onClick={() => initTG().downloadFile("https://i.pinimg.com/736x/82/2a/1d/822a1d20af7ef527f3dbb2636b1568e7.jpg")}>загрузить изображение</button> */}
