@@ -39,9 +39,9 @@ const Template = () => {
 
   initTG().onEvent ("deviceOrientationChanged ", function() {
     // @ts-ignore
-    console.log(this);
+    console.log(this.DeviceOrientation);
     // @ts-ignore
-    setOrient(`alpha: ${this.alpha}, beta: ${this.beta}, gamma: ${this.gamma}`)
+    setOrient(`alpha: ${this.DeviceOrientation.alpha}, beta: ${this.DeviceOrientation.beta}, gamma: ${this.DeviceOrientation.gamma}`)
   })
 
   return (
