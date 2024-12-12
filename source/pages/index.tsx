@@ -29,8 +29,9 @@ const Template = () => {
     setBGColor(tg, "#ffffff");
   }, [])
 
-  const test = tg.DeviceOrientation.start();
-  setOrient(`alpha: ${test?.alpha}, beta: ${test?.beta}, gamma: ${test?.gamma}`);
+  const test = tg.DeviceOrientation.start(20, false);
+  setOrient(`alpha: ${null}, beta: ${null}, gamma: ${null}`);
+  console.log(test);
 
   // 20, false, (orientation) => {
   //   console.log(orientation);
@@ -38,12 +39,12 @@ const Template = () => {
   // }
 
   // @ts-ignore
-  window.Telegram.WebApp.onEvent ("deviceOrientationChanged ", () => {
-    // @ts-ignore
-    console.log(tg.DeviceOrientation);
-    // @ts-ignore
-    setOrient(`alpha: ${tg.DeviceOrientation.alpha}, beta: ${tg.DeviceOrientation.beta}, gamma: ${tg.DeviceOrientation.gamma}`);
-  })
+  // window.Telegram.WebApp.onEvent ("deviceOrientationChanged ", () => {
+  //   // @ts-ignore
+  //   console.log(tg.DeviceOrientation);
+  //   // @ts-ignore
+  //   setOrient(`alpha: ${tg.DeviceOrientation.alpha}, beta: ${tg.DeviceOrientation.beta}, gamma: ${tg.DeviceOrientation.gamma}`);
+  // })
 
   return (
     // <div className={styles["div"]} style={{ color: color, background: "#000" }}>
