@@ -16,33 +16,34 @@ const Template = () => {
 
 
   const [orient, setOrient] = useState("alpha: undefined, beta: undefined, gamma: undefined");
-    // @ts-ignore
-    const tg = window?.Telegram?.WebApp;
+  // @ts-ignore
+  // const tg = window?.Telegram?.WebApp;
 
   const setBGColor = (webApp, color) => {
     webApp.setBottomBarColor(color);
   }
 
-  
 
-  useEffect(() => {
-    setBGColor(tg, "#ffffff");
-  }, [])
 
-  tg.DeviceOrientation.start(20, false);
-  
+  // useEffect(() => {
+  //   setBGColor(tg, "#ffffff");
+  // }, [])
+
+  // @ts-ignore
+  window?.Telegram?.WebApp.DeviceOrientation.start(20, false);
+
   // 20, false, (orientation) => {
   //   console.log(orientation);
   //   setOrient(`alpha: ${orientation.alpha}, beta: ${orientation.beta}, gamma: ${orientation.gamma}`);
   // }
 
   // @ts-ignore
-  // window.Telegram.WebApp.onEvent ("deviceOrientationChanged ", () => {
-  //   // @ts-ignore
-  //   console.log(tg.DeviceOrientation);
-  //   // @ts-ignore
-  //   setOrient(`alpha: ${tg.DeviceOrientation.alpha}, beta: ${tg.DeviceOrientation.beta}, gamma: ${tg.DeviceOrientation.gamma}`);
-  // })
+  window.Telegram.WebApp.onEvent ("deviceOrientationChanged ", () => {
+    // @ts-ignore
+    console.log(window.Telegram.WebApp.DeviceOrientation);
+    // @ts-ignore
+    // setOrient(`alpha: ${tg.DeviceOrientation.alpha}, beta: ${tg.DeviceOrientation.beta}, gamma: ${tg.DeviceOrientation.gamma}`);
+  })
 
   return (
     // <div className={styles["div"]} style={{ color: color, background: "#000" }}>
@@ -50,7 +51,7 @@ const Template = () => {
     // </div>
     <div style={{ background: "#D4EFF7", height: "100vh", width: "100vw", padding: "60px 16px 16px 16px" }}>
       {/* <div style={{ marginTop: "40px", width: "100%" }}>{`${initTG()?.initData}`}</div> */}
-      <div style={{ marginTop: "40px" }}>{`${tg?.initDataUnsafe?.user?.username}`}</div>
+      {/* <div style={{ marginTop: "40px" }}>{`${window?.Telegram?.WebApp?.initDataUnsafe?.user?.username}`}</div> */}
       <div style={{ marginTop: "40px" }}>Загрузилось!!!</div>
       {/* <div style={{ marginTop: "40px" }}>{orient}</div> */}
       {/* <button onClick={() => initTG().downloadFile("https://i.pinimg.com/736x/82/2a/1d/822a1d20af7ef527f3dbb2636b1568e7.jpg")}>загрузить изображение</button> */}
