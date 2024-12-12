@@ -14,6 +14,8 @@ const Template = () => {
     );
   }, 1000);
 
+
+  const [orient, setOrient] = useState("alpha: undefined, beta: undefined, gamma: undefined")
   const initTG = () => {
     // @ts-ignore
     const tg = window?.Telegram?.WebApp;
@@ -29,12 +31,8 @@ const Template = () => {
   }, [])
 
   useEffect(() => {
-    const div = document.getElementById("orient");
     initTG().DeviceOrientation.start(20, false, (orientation) => {
-      if (div) {
-        div.innerText = `alpha: ${orientation.alpha}, beta: ${orientation.beta}, gamma: ${orientation.gamma}`;
-      } else console.warn("div для вывода ориентации не найден!!!");
-
+      setOrient(`alpha: ${orientation.alpha}, beta: ${orientation.beta}, gamma: ${orientation.gamma}`)
     })
   })
 
@@ -46,7 +44,7 @@ const Template = () => {
       <div style={{ marginTop: "40px", width: "100%" }}>{`${initTG()?.initData}`}</div>
       <div style={{ marginTop: "40px" }}>{`${initTG()?.initDataUnsafe?.user?.username}`}</div>
       <div style={{ marginTop: "40px" }}>Загрузилось!!!</div>
-      <div style={{ marginTop: "40px" }} id="orient"></div>
+      <div style={{ marginTop: "40px" }}>{orient}</div>
       {/* <button onClick={() => initTG().downloadFile("https://i.pinimg.com/736x/82/2a/1d/822a1d20af7ef527f3dbb2636b1568e7.jpg")}>загрузить изображение</button> */}
     </div>
   );
