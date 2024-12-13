@@ -13,11 +13,6 @@ class ErrorBoundary extends React.Component {
     return { hasError: true };
   }
 
-  componentDidCatch(error, errorInfo) {
-    // Можно также сохранить информацию об ошибке в соответствующую службу журнала ошибок
-    logErrorToMyService(error, errorInfo);
-  }
-
   render() {
     // @ts-ignore
     if (this.state.hasError) {
@@ -28,10 +23,6 @@ class ErrorBoundary extends React.Component {
     // @ts-ignore
     return this.props.children;
   }
-}
-
-function logErrorToMyService(error: any, errorInfo: any) {
-  throw new Error(error, errorInfo);
 }
 
 const Template = () => {
