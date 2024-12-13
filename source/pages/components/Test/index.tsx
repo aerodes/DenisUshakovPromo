@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 
-const Test = (): ReactElement => {
+const Test = () => {
   return (
     <button
       onClick={() => {
