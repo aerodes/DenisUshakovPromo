@@ -41,12 +41,12 @@ const OrientationMy = () => {
   }, []);
 
   return (
-    <div style={{ padding: "60px 16px 16px 16px", fontFamily: "Arial", background: "#D4EFF7", height: "100vh", width: "100vw" }}>
-      <h1>Device Orientation</h1>
+    <>
+      <h1>Device Orientation my</h1>
       <p>Alpha (Z-axis): {orientation.alpha}</p>
       <p>Beta (X-axis): {orientation.beta}</p>
       <p>Gamma (Y-axis): {orientation.gamma}</p>
-    </div>
+    </>
   );
 };
 
