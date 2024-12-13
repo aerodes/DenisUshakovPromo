@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import OrientationFromGPT from "./components/OrientationFromGPT";
 import OrientationMy from "./components/OrientationMy";
+import Test from "./components/Test";
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -26,7 +27,6 @@ class ErrorBoundary extends React.Component {
 }
 
 const Template = () => {
-  const [data, setData] = useState();
   return (
     <div
       style={{
@@ -44,9 +44,7 @@ const Template = () => {
         <OrientationMy />
       </ErrorBoundary>
       <ErrorBoundary>
-        {data.map((element) => (
-          <p>{element}</p>
-        ))}
+        <Test />
       </ErrorBoundary>
     </div>
   );
