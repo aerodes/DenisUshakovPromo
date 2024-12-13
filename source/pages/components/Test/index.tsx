@@ -1,4 +1,6 @@
-const Test = () => {
+import React, { ReactElement } from "react";
+
+const Test = (): ReactElement => {
   return (
     <button
       onClick={() => {
