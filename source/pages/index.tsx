@@ -26,7 +26,7 @@ class ErrorBoundary extends React.Component {
 }
 
 const Template = () => {
-  const [data, setData] = useState<string[]>();
+  const [data, setData] = useState();
   return (
     <div
       style={{
