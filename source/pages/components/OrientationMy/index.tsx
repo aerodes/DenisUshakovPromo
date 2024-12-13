@@ -22,7 +22,7 @@ const OrientationMy = () => {
   useEffect(() => {
     const handleOrientation = (event) => {
       setOrientation({
-        alpha: event.alpha?.toFixed(2), // Ограничиваем количество знаков
+        alpha: event.alpha?.toFixed(2),
         beta: event.beta?.toFixed(2),
         gamma: event.gamma?.toFixed(2),
       });
