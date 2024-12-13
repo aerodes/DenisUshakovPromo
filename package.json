@@ -52,6 +52,7 @@
     ".+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
   },
   "dependencies": {
-    "@types/telegram-web-app": "^7.10.1"
+    "@types/telegram-web-app": "^7.10.1",
+    "telegram-webapps": "^8.0.2"
   }
 }
