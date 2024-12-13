@@ -26,7 +26,7 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-const Template = (): ReactElement => {
+const Template = () => {
   return (
     <div
       style={{
