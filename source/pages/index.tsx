@@ -22,6 +22,7 @@ const getSafeArea = () => {
 //   getSafeArea();
 // }, [])
 
+// "android" | "android_x" | "ios" | "macos" | "tdesktop" | "weba" | "webk" | "unigram" | "unknown"
 
 Telegram.WebApp.onEvent("contentSafeAreaChanged", () => getSafeArea())
 
@@ -35,6 +36,7 @@ Telegram.WebApp.onEvent("contentSafeAreaChanged", () => getSafeArea())
       }}
     >
       <OrientationFromGPT />
+      <div>{Telegram.WebApp.version}</div>
     </div>
   );
 };
