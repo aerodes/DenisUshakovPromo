@@ -21,12 +21,12 @@ const getSafeArea = () => {
   return (
     <div style={{
       padding: getSafeArea(),
+      background: "#D4EFF7",
     }}>
       <div
       style={{
-        padding: "0px 16px 16px 16px",
+        padding: "16px 16px 16px 16px",
         fontFamily: "Arial",
-        background: "#D4EFF7",
         height: "100vh",
         width: "100vw",
       }}
