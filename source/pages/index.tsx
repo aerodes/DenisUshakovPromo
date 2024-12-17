@@ -18,6 +18,10 @@ const getSafeArea = () => {
   }
 }
 
+// const testFullScreen = () => {
+//   if ()
+// }
+
 // useEffect(() => {
 //   getSafeArea();
 // }, [])
@@ -37,6 +41,7 @@ Telegram.WebApp.onEvent("contentSafeAreaChanged", () => getSafeArea())
     >
       <OrientationFromGPT />
       <div>{Telegram.WebApp.version}</div>
+      <div>{Telegram.WebApp.isVersionAtLeast("8.0")}</div>
     </div>
   );
 };
