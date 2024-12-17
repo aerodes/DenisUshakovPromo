@@ -12,17 +12,17 @@ useEffect(() => {
 const getSafeArea = () => {
   if (Telegram.WebApp.isFullscreen && Telegram.WebApp.contentSafeAreaInset) {
     const safeArea = Telegram.WebApp.contentSafeAreaInset;
-    return `${safeArea.top}px ${safeArea.right}px ${safeArea.bottom}px ${safeArea.left}px`;
+    document.body.style.margin = `${safeArea.top}px ${safeArea.right}px ${safeArea.bottom}px ${safeArea.left}px`;
   } else {
-    return "0"
+    document.body.style.margin = "0";
   }
 }
 
+useEffect(() => {
+  getSafeArea();
+}, [Telegram.WebApp.contentSafeAreaInset])
+
   return (
-    <div style={{
-      padding: getSafeArea(),
-      background: "#D4EFF7",
-    }}>
       <div
       style={{
         padding: "16px 16px 16px 16px",
@@ -32,7 +32,6 @@ const getSafeArea = () => {
       }}
     >
       <OrientationFromGPT />
-    </div>
     </div>
   );
 };
