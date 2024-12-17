@@ -4,34 +4,43 @@ import OrientationMy from "./components/OrientationMy";
 import Test from "./components/Test";
 
 const Template = () => {
+  useEffect(() => {
+    console.log(Telegram.WebApp.contentSafeAreaInset);
+  }, []);
 
-useEffect(() => {
-  console.log(Telegram.WebApp.contentSafeAreaInset);
-}, [])
+  const getSafeArea = () => {
+    if (Telegram.WebApp.isFullscreen && Telegram.WebApp.contentSafeAreaInset) {
+      const safeArea = Telegram.WebApp.contentSafeAreaInset;
+      document.body.style.margin = `${safeArea.top}px ${safeArea.right}px ${safeArea.bottom}px ${safeArea.left}px`;
+    } else {
+      document.body.style.margin = "0";
+    }
+  };
 
-const getSafeArea = () => {
-  if (Telegram.WebApp.isFullscreen && Telegram.WebApp.contentSafeAreaInset) {
-    const safeArea = Telegram.WebApp.contentSafeAreaInset;
-    document.body.style.margin = `${safeArea.top}px ${safeArea.right}px ${safeArea.bottom}px ${safeArea.left}px`;
-  } else {
-    document.body.style.margin = "0";
-  }
-}
+  const testFullScreen = () => {
+    const tg = Telegram.WebApp;
+    if (tg.isVersionAtLeast("8.0")) {
+      console.log("версия выше или равна API 8.0");
+      tg.lockOrientation();
+      if (
+        tg.platform === "android" ||
+        tg.platform === "android_x" ||
+        tg.platform === "ios"
+      ) {
+        tg.requestFullscreen();
+        document.body.style.margin = `${tg.contentSafeAreaInset.top}px ${tg.contentSafeAreaInset.right}px ${tg.contentSafeAreaInset.bottom}px ${tg.contentSafeAreaInset.left}px`;
+      }
+    } else {
+      tg.expand();
+    }
+  };
 
-// const testFullScreen = () => {
-//   if ()
-// }
+  document.addEventListener("DOMContentLoaded", () => testFullScreen());
 
-// useEffect(() => {
-//   getSafeArea();
-// }, [])
-
-// "android" | "android_x" | "ios" | "macos" | "tdesktop" | "weba" | "webk" | "unigram" | "unknown"
-
-Telegram.WebApp.onEvent("contentSafeAreaChanged", () => getSafeArea())
+  Telegram.WebApp.onEvent("contentSafeAreaChanged", () => getSafeArea());
 
   return (
-      <div
+    <div
       style={{
         padding: "16px 16px 16px 16px",
         fontFamily: "Arial",
@@ -42,6 +51,7 @@ Telegram.WebApp.onEvent("contentSafeAreaChanged", () => getSafeArea())
       <OrientationFromGPT />
       <div>{Telegram.WebApp.version}</div>
       <div>{Telegram.WebApp.isVersionAtLeast("8.0")}</div>
+      <div>top: {Telegram.WebApp.contentSafeAreaInset.top}</div>
     </div>
   );
 };
