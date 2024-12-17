@@ -18,9 +18,12 @@ const getSafeArea = () => {
   }
 }
 
-useEffect(() => {
-  getSafeArea();
-}, [Telegram.WebApp.contentSafeAreaInset])
+// useEffect(() => {
+//   getSafeArea();
+// }, [])
+
+
+Telegram.WebApp.onEvent("contentSafeAreaChanged", () => getSafeArea())
 
   return (
       <div
