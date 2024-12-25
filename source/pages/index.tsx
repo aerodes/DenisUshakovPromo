@@ -42,6 +42,7 @@ const Template = () => {
   useEffect(() => {
     if (Telegram.WebApp.isVersionAtLeast("7.0")) {
       Telegram.WebApp.SettingsButton.show();
+      Telegram.WebApp.MainButton.show();
     }
   }, []);
 
