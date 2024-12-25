@@ -39,6 +39,12 @@ const Template = () => {
 
   Telegram.WebApp.onEvent("contentSafeAreaChanged", () => getSafeArea());
 
+  useEffect(() => {
+    if (Telegram.WebApp.isVersionAtLeast("7.0")) {
+      Telegram.WebApp.SettingsButton.show();
+    }
+  }, []);
+
   return (
     <div
       style={{
