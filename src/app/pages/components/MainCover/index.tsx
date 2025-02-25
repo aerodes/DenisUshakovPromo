@@ -12,11 +12,18 @@ const MainCover = (): React.ReactElement => {
         height: 260
     });
 
+    const is375px = useMediaQuery('(min-width: 375px)');
     const is425px = useMediaQuery('(min-width: 425px)');
     const is600px = useMediaQuery('(min-width: 600px)');
     const is1024px = useMediaQuery('(min-width: 1024px)');
 
     useEffect(() => {
+        if (is375px) {
+            setSizeImage({
+                width: 200,
+                height: 260
+            })
+        }
         if (is425px) {
             setSizeImage({
                 width: 300,
@@ -35,7 +42,7 @@ const MainCover = (): React.ReactElement => {
                 height: 1200
             })
         }
-    }, [ is425px, is600px, is1024px])
+    }, [is375px, is425px, is600px, is1024px])
 
     return (
         <div className={styles.main}>
