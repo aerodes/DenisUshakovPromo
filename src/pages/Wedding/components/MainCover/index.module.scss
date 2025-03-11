@@ -1,5 +1,5 @@
 .main {
-    // width: 100%;
+    width: 100vw;
     height: 100vh;
 
     display: flex;
@@ -7,46 +7,92 @@
     justify-content: center;
     overflow: hidden;
 
-    position: relative;
+    &_container {
+        position: relative;
+        width: 210px;
+        &_D {
+            font-family: Koh Santepheap;
+            font-size: 140px;
+            color: #ffffff;
 
-    gap: 50px;
-    @media (min-width: 1024px) {
-        gap: 180px;
-    }
+            position: absolute;
+            left: -35px;
+            top: -75px;
+            z-index: 0;
+        }
+        &_K {
+            font-family: Koh Santepheap;
+            font-size: 140px;
+            color: #ffffff;
 
-    &_title {
-        font-size: 148px;
-        color: #ffffff;
-
+            position: absolute;
+            right: -35px;
+            top: -45px;
+            z-index: 10;
+        }
+        &_logo {
+            position: absolute;
+            width: 100%;
+            z-index: 5;
+            margin-top: calc(50% - 273px);
+        }
         @media (min-width: 375px) {
-            font-size: 188px;
+            width: 215px;
+            &_D {
+                left: -50px;
+                top: -65px;
+            }
+            &_K {
+                right: -50px;
+                top: -35px;
+            }
         }
-        @media (min-width: 600px) {
-            font-size: 298px;
-        }
-        @media (min-width: 1024px) {
-            font-size: 428px;
-        }
-
-    }
-
-    &_img {
-        position: absolute;
-
-        left: calc(50% - 100px);
-        top: calc(50% - 145px);
-
         @media (min-width: 425px) {
-            left: calc(50% - 150px);
-            top: calc(50% - 225px);
+            width: 240px;
+            &_D {
+                left: -50px;
+                top: -45px;
+                font-size: 160px;
+            }
+            &_K {
+                right: -50px;
+                top: -15px;
+                font-size: 160px;
+            }
         }
-        @media (min-width: 600px) {
-            left: calc(50% - 200px);
-            top: calc(50% - 310px);
+        @media (min-width: 550px) {
+            width: 280px;
+
+            &_logo {
+                margin-top: calc(50% - 363px);
+            }
+            &_D {
+                left: -60px;
+                top: -95px;
+                font-size: 180px;
+            }
+            &_K {
+                right: -60px;
+                top: -55px;
+                font-size: 180px;
+            }
         }
         @media (min-width: 1024px) {
-            left: calc(50% - 400px);
-            top: calc(50% - 660px);
+            width: 360px;
+
+            &_logo {
+                margin-top: calc(50% - 460px);
+            }
+            &_D {
+                left: 0px;
+                top: -285px;
+                font-size: 180px;
+            }
+            &_K {
+                right: -50px;
+                top: -5px;
+                font-size: 180px;
+            }
         }
     }
 }

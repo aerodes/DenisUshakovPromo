@@ -1,7 +1,46 @@
-*, body {
-  box-sizing: border-box;
-  padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@100;300;400;700;900&family=Montserrat:wght@100..900&display=swap");
+
+*,
+body {
+    box-sizing: border-box;
+    padding: 0;
 }
 body {
-  margin: 0;
+    margin: 0;
 }
+
+.koh-santepheap-thin {
+    font-family: "Koh Santepheap", serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+/* @font-face {
+    font-family: Koh_santepheap;
+    src: url("https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@100&family=Montserrat:wght@100..900&display=swap");
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: Koh_santepheap;
+    src: url("https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@300&family=Montserrat:wght@100..900&display=swap");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Koh_santepheap;
+    src: url("https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@400&family=Montserrat:wght@100..900&display=swap");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Koh_santepheap;
+    src: url("https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@700&family=Montserrat:wght@100..900&display=swap");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Koh_santepheap;
+    src: url("https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@900&family=Montserrat:wght@100..900&display=swap");
+    font-weight: 900;
+} */
