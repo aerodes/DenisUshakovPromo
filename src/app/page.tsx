@@ -1,4 +1,4 @@
-import Wedding from "./pages/Wedding";
+import Wedding from "../pages/Wedding";
 
 export default function Home(): React.ReactElement {
   return (

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import styles from "./index.module.scss"
 import { useEffect, useState } from "react";
-import useMediaQuery from "@/app/shared/hooks/useMediaQuery";
+import useMediaQuery from "@/shared/hooks/useMediaQuery";
 
 const MainCover = (): React.ReactElement => {
 
