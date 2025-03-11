@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@100;300;400;700;900&family=Montserrat:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&family=Koh+Santepheap:wght@100;300;400;700;900&family=Montserrat:wght@100..900&display=swap");
 
 *,
 body {
@@ -7,40 +8,5 @@ body {
 }
 body {
     margin: 0;
+    background: #ffffff;
 }
-
-.koh-santepheap-thin {
-    font-family: "Koh Santepheap", serif;
-    font-weight: 100;
-    font-style: normal;
-}
-
-/* @font-face {
-    font-family: Koh_santepheap;
-    src: url("https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@100&family=Montserrat:wght@100..900&display=swap");
-    font-weight: 100;
-}
-
-@font-face {
-    font-family: Koh_santepheap;
-    src: url("https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@300&family=Montserrat:wght@100..900&display=swap");
-    font-weight: 300;
-}
-
-@font-face {
-    font-family: Koh_santepheap;
-    src: url("https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@400&family=Montserrat:wght@100..900&display=swap");
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: Koh_santepheap;
-    src: url("https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@700&family=Montserrat:wght@100..900&display=swap");
-    font-weight: 700;
-}
-
-@font-face {
-    font-family: Koh_santepheap;
-    src: url("https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@900&family=Montserrat:wght@100..900&display=swap");
-    font-weight: 900;
-} */
