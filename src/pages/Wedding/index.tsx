@@ -1,7 +1,9 @@
 import CalendarWithDay from "./components/CalendarWithDay";
+import DressCode from "./components/DressCode";
 import Greeting from "./components/Greeting";
 import MainCover from "./components/MainCover";
 import Place from "./components/Place";
+import ProgramDay from "./components/ProgramDay";
 import styles from "./index.module.scss";
 
 const Wedding = (): React.ReactElement => {
@@ -19,7 +21,12 @@ const Wedding = (): React.ReactElement => {
             <div>
                 <Place />
             </div>
-            <div></div>
+            <div>
+                <ProgramDay />
+            </div>
+            <div>
+                <DressCode />
+            </div>
         </div>
     );
 };

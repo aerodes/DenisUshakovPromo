@@ -18,7 +18,7 @@ const Place = (): React.ReactElement => {
                     Показать на карте
                 </div>
                 <div className={styles.main_photo_container_place}>
-                    <ImageCustom src="./shared/images/place.jpg" />
+                    <ImageCustom src="./shared/images/place.jpg" style={{ borderRadius: "8px" }} />
                 </div>
             </div>
         </div>

@@ -5,6 +5,7 @@ import {
     StaticImport,
 } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
+import { CSSProperties } from "react";
 const ImageCustom = ({
     ...args
 }: {
@@ -27,6 +28,7 @@ const ImageCustom = ({
     objectPosition?: string;
     lazyBoundary?: string;
     lazyRoot?: string;
+    style?: CSSProperties;
 }): React.ReactElement => {
     return (
         <div style={{ position: "relative", width: "100%", height: "100%" }}>
