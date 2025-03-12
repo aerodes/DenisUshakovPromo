@@ -1,0 +1,92 @@
+.main {
+    background: #ffffff;
+    width: 100vw;
+    padding: 10px;
+    margin-top: 30px;
+
+    @media (min-width: 1024px) {
+        padding: 30px;
+    }
+
+    &_title {
+        font-family: Cormorant Unicase;
+        font-size: 36px;
+        font-weight: 400;
+        text-align: center;
+
+        margin: auto;
+        width: fit-content;
+
+        &_sub {
+            font-family: Cormorant Unicase;
+            font-size: 24px;
+            font-weight: 400;
+            text-align: center;
+
+            margin: auto;
+            margin-top: 8px;
+            width: fit-content;
+            max-width: 425px;
+
+            @media (min-width: 490px) {
+                max-width: 490px;
+            }
+            @media (min-width: 1024px) {
+                max-width: 1500px;
+                font-size: 64px;
+            }
+        }
+        @media (min-width: 1024px) {
+            font-size: 128px;
+        }
+    }
+    &_photo_container {
+        position: relative;
+        width: 300px;
+        margin: auto;
+        margin-top: 70px;
+
+        &_btn {
+            position: absolute;
+            top: -27.5px;
+            left: calc(50% - 115px);
+
+            width: 230px;
+            aspect-ratio: 4 / 1;
+            clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+
+            background: #d9d9d9;
+            z-index: 10;
+
+            font-family: Cormorant Unicase;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 55px;
+            cursor: pointer;
+        }
+        &_place {
+            width: 100%;
+            aspect-ratio: 1;
+        }
+
+        @media (min-width: 425px) {
+            width: 405px;
+        }
+        @media (min-width: 500px) {
+            width: 480px;
+        }
+        @media (min-width: 1024px) {
+            width: 705px;
+            margin-top: 140px;
+            &_btn {
+                width: 400px;
+                top: -50px;
+                left: calc(50% - 200px);
+
+                font-size: 36px;
+                line-height: 100px;
+            }
+        }
+    }
+}

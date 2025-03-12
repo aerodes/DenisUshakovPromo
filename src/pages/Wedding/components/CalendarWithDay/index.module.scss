@@ -1,0 +1,69 @@
+.main {
+    background: #ffffff;
+    width: 100vw;
+    padding: 10px;
+
+    @media (min-width: 1024px) {
+        padding: 30px;
+    }
+
+    &_title {
+        font-family: Cormorant Unicase;
+        font-size: 34px;
+        font-weight: 400;
+        text-align: center;
+
+        margin: auto;
+        width: fit-content;
+
+        @media (min-width: 1024px) {
+            font-size: 128px;
+        }
+    }
+    &_photo_container {
+        position: relative;
+        width: 100%;
+        margin: auto;
+        &_calendar {
+            width: 100%;
+            aspect-ratio: 1;
+        }
+
+        @media (min-width: 425px) {
+            max-width: 405px;
+        }
+        @media (min-width: 500px) {
+            max-width: 425px;
+        }
+        @media (min-width: 1024px) {
+            max-width: 650px;
+        }
+        @media (min-width: 1440px) {
+            max-width: 1024px;
+        }
+    }
+    &_daysLeft {
+        border-radius: 8px;
+        background: #d9d9d9;
+        padding: 5px 10px 10px 10px;
+
+        font-family: Cormorant Unicase;
+        font-size: 24px;
+        font-weight: 400;
+        text-align: center;
+
+        margin: auto;
+        margin-top: 20px;
+        width: 100%;
+        max-width: 355px;
+
+        @media (min-width: 1024px) {
+            border-radius: 30px;
+            font-size: 96px;
+            max-width: 530px;
+        }
+        @media (min-width: 1440px) {
+            max-width: 1024px;
+        }
+    }
+}

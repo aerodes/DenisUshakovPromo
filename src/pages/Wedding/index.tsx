@@ -1,5 +1,7 @@
+import CalendarWithDay from "./components/CalendarWithDay";
 import Greeting from "./components/Greeting";
 import MainCover from "./components/MainCover";
+import Place from "./components/Place";
 import styles from "./index.module.scss";
 
 const Wedding = (): React.ReactElement => {
@@ -11,8 +13,12 @@ const Wedding = (): React.ReactElement => {
             <div>
                 <Greeting />
             </div>
-            <div></div>
-            <div></div>
+            <div>
+                <CalendarWithDay />
+            </div>
+            <div>
+                <Place />
+            </div>
             <div></div>
         </div>
     );

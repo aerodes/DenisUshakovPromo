@@ -3,7 +3,7 @@
 import ImageCustom from "@/src/shared/components/ImageCustom";
 import styles from "./index.module.scss";
 
-const MainCover = (): React.ReactElement => {
+const Greeting = (): React.ReactElement => {
     return (
         <div className={styles.main}>
             <div className={styles.main_title}>Дорогие гости!</div>
@@ -22,4 +22,4 @@ const MainCover = (): React.ReactElement => {
     );
 };
 
-export default MainCover;
+export default Greeting;
