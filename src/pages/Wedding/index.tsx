@@ -4,6 +4,7 @@ import Greeting from "./components/Greeting";
 import MainCover from "./components/MainCover";
 import Place from "./components/Place";
 import ProgramDay from "./components/ProgramDay";
+import Tips from "./components/Tips";
 import styles from "./index.module.scss";
 
 const Wedding = (): React.ReactElement => {
@@ -26,6 +27,9 @@ const Wedding = (): React.ReactElement => {
             </div>
             <div>
                 <DressCode />
+            </div>
+            <div>
+                <Tips />
             </div>
         </div>
     );

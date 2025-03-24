@@ -1,0 +1,13 @@
+.mainShell {
+    padding: 20px 15px;
+    background: #d9d9d9;
+    border-radius: 30px;
+
+    font-family: Cormorant Unicase;
+    font-size: 16px;
+    font-weight: 400;
+
+    @media (min-width: 1024px) {
+        font-size: 32px;
+    }
+}
