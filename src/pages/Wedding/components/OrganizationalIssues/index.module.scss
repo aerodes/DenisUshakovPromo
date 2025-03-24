@@ -1,0 +1,87 @@
+.main {
+    background: #ffffff;
+    width: 100vw;
+    padding: 10px;
+    margin-top: 50px;
+
+    @media (min-width: 1024px) {
+        padding: 30px;
+    }
+
+    &_title {
+        font-family: Cormorant Unicase;
+        font-size: 28px;
+        font-weight: 400;
+        text-align: center;
+
+        margin: auto;
+        width: fit-content;
+
+        @media (min-width: 375px) {
+            font-size: 32px;
+        }
+        @media (min-width: 425px) {
+            font-size: 40px;
+        }
+        @media (min-width: 1024px) {
+            font-size: 90px;
+        }
+
+        &_sub {
+            &_left {
+                font-family: Cormorant Unicase;
+                font-size: 24px;
+                font-weight: 400;
+                text-align: left;
+
+                margin: auto;
+                margin-top: 5px;
+                width: calc(100% - 90px);
+                max-width: 500px;
+
+                @media (min-width: 1024px) {
+                    font-size: 56px;
+                }
+            }
+            &_right {
+                font-family: Cormorant Unicase;
+                font-size: 24px;
+                font-weight: 400;
+                text-align: right;
+
+                margin: auto;
+                margin-top: 5px;
+                width: calc(100% - 60px);
+                max-width: 500px;
+
+                @media (min-width: 1024px) {
+                    font-size: 56px;
+                }
+            }
+        }
+    }
+    &_container {
+        &_left {
+            margin: auto;
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            justify-content: start;
+
+            @media (min-width: 1024px) {
+                max-width: 1000px;
+            }
+        }
+        &_right {
+            margin: auto;
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            justify-content: flex-end;
+
+            @media (min-width: 1024px) {
+                max-width: 725px;
+            }
+        }
+    }
+}
