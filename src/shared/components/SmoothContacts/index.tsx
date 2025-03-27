@@ -18,12 +18,8 @@ const SmoothContacts = ({
     const [viewInfo, setViewInfo] = useState(false);
     const outsideAlerterRef = useOutsideEventClick(() => setViewInfo(false));
     return (
-        <div {...args} style={style} className={styles.mainShell}>
-            <div
-                className={styles.mainShell_face}
-                ref={outsideAlerterRef}
-                onClick={() => setViewInfo(!viewInfo)}
-            >
+        <div {...args} style={style} className={styles.mainShell} ref={outsideAlerterRef}>
+            <div className={styles.mainShell_face} onClick={() => setViewInfo(!viewInfo)}>
                 <div className={styles.mainShell_face_avatar}>
                     <ImageCustom src={srcAvatar} />
                 </div>
