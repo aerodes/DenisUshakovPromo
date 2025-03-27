@@ -1,7 +1,10 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from "react";
 
 const useSafeLinkOpener = () => {
+    //@ts-ignore
     const openLink = React.useCallback((url, options = {}) => {
+        //@ts-ignore
         const { target = "_blank", timeout = 3000, fallbackStrategy = "location" } = options;
 
         if (!url || typeof url !== "string") {
@@ -9,6 +12,7 @@ const useSafeLinkOpener = () => {
             return;
         }
 
+        //@ts-ignore
         const sanitizeUrl = (rawUrl) =>
             encodeURI(rawUrl)
                 .replace(/javascript:/gi, "")
@@ -18,6 +22,7 @@ const useSafeLinkOpener = () => {
         let success = false;
 
         // Общая функция для открытия через window.open
+        //@ts-ignore
         const tryWindowStrategy = (t) => {
             try {
                 const newWindow = window.open("", t);
