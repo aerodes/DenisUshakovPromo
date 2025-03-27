@@ -37,7 +37,7 @@ const Contacts = (): React.ReactElement => {
                     <div className={styles.main_contacts}>
                         <div
                             className={styles.main_contacts_item}
-                            onClick={() => openLinkClick(data.denis.phone)}
+                            onClick={() => openLinkClick(data.denis.url)}
                         >
                             <div className={styles.main_contacts_item_icon}>
                                 <TelegramIcon />
@@ -59,7 +59,7 @@ const Contacts = (): React.ReactElement => {
                     <div className={styles.main_contacts}>
                         <div
                             className={styles.main_contacts_item}
-                            onClick={() => openLinkClick(data.denis.phone)}
+                            onClick={() => openLinkClick(data.denis.url)}
                         >
                             <div className={styles.main_contacts_item_icon}>
                                 <TelegramIcon />
