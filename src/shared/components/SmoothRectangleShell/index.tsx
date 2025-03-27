@@ -1,14 +1,16 @@
-import { CSSProperties } from "react";
+import { CSSProperties, HTMLAttributes } from "react";
 import styles from "./index.module.scss";
+import React from "react";
 const SmoothRectangleShell = ({
     style,
     children,
+    ...args
 }: {
     style?: CSSProperties;
     children?: React.ReactNode;
-}): React.ReactElement => {
+} & HTMLAttributes<HTMLDivElement>): React.ReactElement => {
     return (
-        <div style={style} className={styles.mainShell}>
+        <div {...args} style={style} className={styles.mainShell}>
             {children}
         </div>
     );
