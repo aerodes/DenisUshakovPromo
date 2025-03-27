@@ -40,5 +40,31 @@
     &_contacts {
         display: flex;
         justify-content: space-between;
+        gap: 20px;
+
+        &_item {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            cursor: pointer;
+
+            &_icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 25px;
+                aspect-ratio: 1;
+            }
+            &_text {
+                white-space: nowrap;
+                font-family: Cormorant Unicase;
+                font-size: 16px;
+                font-weight: 900;
+                color: rgb(20, 158, 202);
+            }
+        }
     }
 }
