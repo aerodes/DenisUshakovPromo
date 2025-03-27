@@ -4,6 +4,12 @@
     padding: 10px;
     margin-top: 50px;
 
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: start;
+    height: 80vh;
+
     @media (min-width: 1024px) {
         padding: 30px;
     }
@@ -14,7 +20,7 @@
         font-weight: 900;
         text-align: center;
 
-        margin: auto;
+        margin: 0px auto;
         width: fit-content;
 
         @media (min-width: 375px) {
