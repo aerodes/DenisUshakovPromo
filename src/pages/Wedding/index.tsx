@@ -1,4 +1,6 @@
 import CalendarWithDay from "./components/CalendarWithDay";
+import Confirmation from "./components/Confirmation";
+import Contacts from "./components/Contacts";
 import DressCode from "./components/DressCode";
 import Greeting from "./components/Greeting";
 import GuestChat from "./components/GuestChat";
@@ -38,6 +40,12 @@ const Wedding = (): React.ReactElement => {
             </div>
             <div>
                 <OrganizationalIssues />
+            </div>
+            <div>
+                <Confirmation />
+            </div>
+            <div>
+                <Contacts />
             </div>
         </div>
     );

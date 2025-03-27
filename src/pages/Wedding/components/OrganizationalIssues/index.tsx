@@ -2,6 +2,7 @@
 
 import SmoothRectangleShell from "@/src/shared/components/SmoothRectangleShell";
 import styles from "./index.module.scss";
+import ImageCustom from "@/src/shared/components/ImageCustom";
 
 const OrganizationalIssues = (): React.ReactElement => {
     return (
@@ -42,6 +43,14 @@ const OrganizationalIssues = (): React.ReactElement => {
                     учитывайте погодные условия при выборе наряда. Рекомендуем взять с собой что-то
                     теплое на случай прохладного вечера.
                 </SmoothRectangleShell>
+            </div>
+            <div className={styles.main_photo_container}>
+                <div className={styles.main_photo_container_1}>
+                    <ImageCustom src="./shared/images/issues_1.png" />
+                </div>
+                <div className={styles.main_photo_container_2}>
+                    <ImageCustom src="./shared/images/issues_2.png" />
+                </div>
             </div>
         </div>
     );

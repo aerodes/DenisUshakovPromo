@@ -1,0 +1,38 @@
+.mainShell {
+    padding: 8px;
+    background: #d9d9d9;
+    border-radius: 38px;
+
+    @media (min-width: 1024px) {
+        font-size: 32px;
+    }
+
+    &_face {
+        cursor: pointer;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        &_avatar {
+            width: 60px;
+            aspect-ratio: 1;
+        }
+        &_text {
+            font-family: Cormorant Unicase;
+            font-size: 28px;
+            font-weight: 900;
+
+            width: 100%;
+            text-align: center;
+            margin-left: -60px;
+        }
+    }
+    &_info {
+        &_none {
+            display: none;
+        }
+        width: fit-content;
+        margin: auto;
+        margin-top: 8px;
+        margin-bottom: 10px;
+    }
+}

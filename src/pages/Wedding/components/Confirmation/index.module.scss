@@ -1,0 +1,35 @@
+.main {
+    background: #ffffff;
+    width: 100vw;
+    padding: 10px;
+    margin-top: 50px;
+
+    @media (min-width: 1024px) {
+        padding: 30px;
+    }
+
+    &_title {
+        font-family: Cormorant Unicase;
+        font-size: 28px;
+        font-weight: 900;
+        text-align: center;
+
+        margin: auto;
+        width: fit-content;
+
+        @media (min-width: 375px) {
+            font-size: 32px;
+        }
+        @media (min-width: 425px) {
+            font-size: 40px;
+        }
+        @media (min-width: 1024px) {
+            font-size: 90px;
+        }
+    }
+    &_container {
+        margin: auto;
+        width: 100%;
+        max-width: 1024px;
+    }
+}
