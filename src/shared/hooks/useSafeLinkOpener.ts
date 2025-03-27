@@ -44,7 +44,7 @@ const useSafeLinkOpener = () => {
                 setTimeout(() => clearInterval(checkInterval), timeout);
                 return true;
             } catch (e) {
-                console.warn(`Window.open (${t}) failed:`, e.message);
+                console.warn(`Window.open (${t}) failed:`, e);
                 return false;
             }
         };
