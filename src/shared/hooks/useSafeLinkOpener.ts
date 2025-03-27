@@ -34,7 +34,7 @@ const useSafeLinkOpener = () => {
                     }
                     try {
                         if (!newWindow.location.href) throw new Error("Blocked");
-                    } catch (e) {
+                    } catch {
                         newWindow.close();
                         clearInterval(checkInterval);
                         throw new Error("Popup blocked");
