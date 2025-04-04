@@ -3,6 +3,7 @@
 import ImageCustom from "@/src/shared/components/ImageCustom";
 import styles from "./index.module.scss";
 import { useEffect, useState } from "react";
+import useMediaQuery from "@/src/shared/hooks/useMediaQuery";
 
 const CalendarWithDay = (): React.ReactElement => {
     const getDate = () => {
@@ -33,6 +34,8 @@ const CalendarWithDay = (): React.ReactElement => {
 
     const [timeLeft, setTimeLeft] = useState(getDate());
 
+    const is1024px = useMediaQuery("(max-width: 1024px)");
+
     useEffect(() => {
         const timer = setInterval(() => {
             setTimeLeft(getDate());
@@ -43,26 +46,35 @@ const CalendarWithDay = (): React.ReactElement => {
     return (
         <div className={styles.main}>
             <div className={styles.main_title}>Торжество состоится:</div>
-            <div className={styles.main_photo_container}>
-                <div className={styles.main_photo_container_calendar}>
-                    <ImageCustom src="./shared/images/calendar.png" />
+            <div className={styles.main_container}>
+                <div>
+                    <div className={styles.main_photo_container}>
+                        <div className={styles.main_photo_container_calendar}>
+                            <ImageCustom src="./shared/images/calendar.png" />
+                        </div>
+                    </div>
+                    {is1024px ? <div className={styles.main_title_date}>25.07.2025</div> : null}
+                </div>
+                <div>
+                    <div className={styles.main_daysLeft}>
+                        Осталось:{" "}
+                        {`${timeLeft.months} мес. ${timeLeft.days} д. ${
+                            timeLeft.hours.toString().length > 1
+                                ? timeLeft.hours
+                                : "0" + timeLeft.hours
+                        }:${
+                            timeLeft.minutes.toString().length > 1
+                                ? timeLeft.minutes
+                                : "0" + timeLeft.minutes
+                        }:${
+                            timeLeft.seconds.toString().length > 1
+                                ? timeLeft.seconds
+                                : "0" + timeLeft.seconds
+                        }`}
+                    </div>
                 </div>
             </div>
-            <div className={styles.main_title}>25.07.2025</div>
-            <div className={styles.main_daysLeft}>
-                Осталось:{" "}
-                {`${timeLeft.months} мес. ${timeLeft.days} д. ${
-                    timeLeft.hours.toString().length > 1 ? timeLeft.hours : "0" + timeLeft.hours
-                }:${
-                    timeLeft.minutes.toString().length > 1
-                        ? timeLeft.minutes
-                        : "0" + timeLeft.minutes
-                }:${
-                    timeLeft.seconds.toString().length > 1
-                        ? timeLeft.seconds
-                        : "0" + timeLeft.seconds
-                }`}
-            </div>
+            {!is1024px ? <div className={styles.main_title_date}>25.07.2025</div> : null}
         </div>
     );
 };
