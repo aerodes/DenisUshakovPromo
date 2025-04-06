@@ -36,7 +36,6 @@
     }
     &_container {
         margin: auto;
-        width: fit-content;
         display: flex;
         flex-direction: column;
         @media (min-width: 1024px) {

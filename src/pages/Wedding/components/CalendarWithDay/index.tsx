@@ -2,8 +2,10 @@
 
 import ImageCustom from "@/src/shared/components/ImageCustom";
 import styles from "./index.module.scss";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useMediaQuery from "@/src/shared/hooks/useMediaQuery";
+import { useTypewriter } from "@/src/shared/hooks/useTypewriter";
+import { useOnScreenEffect } from "@/src/shared/hooks/useOnScreenEffect";
 
 const CalendarWithDay = (): React.ReactElement => {
     const getDate = () => {
@@ -43,6 +45,38 @@ const CalendarWithDay = (): React.ReactElement => {
 
         return () => clearInterval(timer);
     }, []);
+
+    const [startTyping, setStartTyping] = useState(false);
+
+    const ref = useRef(null);
+
+    useOnScreenEffect(() => {
+        setStartTyping(true);
+    }, ref);
+
+    const { text, isFinished } = useTypewriter(
+        [
+            "2205",
+            "2025 ujlf",
+            "2025 года",
+            "нет, как же там было",
+            "июня",
+            "июля 2025 года",
+            "нет, не так",
+            "25 июля 2025 года",
+            "нет, как-то долго",
+            "как же, как же",
+            "ааа, ВОО",
+            "25.07.2025",
+        ],
+        {
+            delay: 80,
+            loop: false,
+            pauseTime: 300,
+            start: startTyping,
+        }
+    );
+
     return (
         <div className={styles.main}>
             <div className={styles.main_title}>Торжество состоится:</div>
@@ -53,7 +87,26 @@ const CalendarWithDay = (): React.ReactElement => {
                             <ImageCustom src="./shared/images/calendar.png" />
                         </div>
                     </div>
-                    {is1024px ? <div className={styles.main_title_date}>25.07.2025</div> : null}
+                    {is1024px ? (
+                        <div ref={ref} className={styles.main_title_date}>
+                            {text} {!isFinished && <span className="cursor">|</span>}
+                            <style jsx>{`
+                                .cursor {
+                                    animation: blink 1s step-end infinite;
+                                }
+
+                                @keyframes blink {
+                                    from,
+                                    to {
+                                        opacity: 0;
+                                    }
+                                    50% {
+                                        opacity: 1;
+                                    }
+                                }
+                            `}</style>
+                        </div>
+                    ) : null}
                 </div>
                 <div>
                     <div className={styles.main_daysLeft}>
@@ -74,7 +127,26 @@ const CalendarWithDay = (): React.ReactElement => {
                     </div>
                 </div>
             </div>
-            {!is1024px ? <div className={styles.main_title_date}>25.07.2025</div> : null}
+            {!is1024px ? (
+                <div ref={ref} className={styles.main_title_date}>
+                    {text} {!isFinished && <span className="cursor">|</span>}
+                    <style jsx>{`
+                        .cursor {
+                            animation: blink 1s step-end infinite;
+                        }
+
+                        @keyframes blink {
+                            from,
+                            to {
+                                opacity: 0;
+                            }
+                            50% {
+                                opacity: 1;
+                            }
+                        }
+                    `}</style>
+                </div>
+            ) : null}
         </div>
     );
 };

@@ -3,8 +3,17 @@
     width: 100vw;
     padding: 10px;
 
+    position: relative;
+
     @media (min-width: 1024px) {
         padding: 30px;
+    }
+
+    &_gradient {
+        width: 100vw;
+        height: 10vh;
+
+        background-image: linear-gradient(to bottom, #747474, rgb(190, 190, 190), #ffffff);
     }
 
     &_title {
@@ -41,6 +50,19 @@
         height: 300px;
         width: 300px;
         margin: auto;
+        opacity: 0;
+
+        &_load {
+            animation: load 2s ease-out forwards;
+            @keyframes load {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+        }
         &_1 {
             width: 190px;
             aspect-ratio: 1;
