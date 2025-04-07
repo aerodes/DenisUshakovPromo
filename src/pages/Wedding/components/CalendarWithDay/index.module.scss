@@ -40,7 +40,7 @@
         flex-direction: column;
         @media (min-width: 1024px) {
             flex-direction: row;
-            gap: 40px;
+            max-width: 750px
         }
         div {
             width: 100%;
@@ -58,11 +58,13 @@
         @media (min-width: 425px) {
             max-width: 405px;
         }
-        @media (min-width: 500px) {
-            max-width: 425px;
-        }
-        @media (min-width: 1440px) {
-            max-width: 1024px;
+        // @media (min-width: 500px) {
+        //     max-width: 425px;
+        // }
+        @media (min-width: 1024px) {
+            max-width: 300px;
+            border-radius: 30px;
+            box-shadow: 10px 5px 30px 0px rgba(0, 0, 0, 0.1);
         }
     }
     &_daysLeft {
@@ -82,11 +84,16 @@
 
         @media (min-width: 1024px) {
             border-radius: 30px;
-            font-size: 66px;
-            max-width: 425px;
-        }
-        @media (min-width: 1440px) {
-            max-width: 1024px;
+            font-size: 46px;
+            max-width: 300px;
+            box-shadow: 10px 5px 30px 0px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            margin-top: 0px;
+            aspect-ratio: 1;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 }

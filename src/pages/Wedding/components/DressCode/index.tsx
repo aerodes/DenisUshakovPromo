@@ -5,8 +5,10 @@ import styles from "./index.module.scss";
 import { useRef, useState } from "react";
 import { useOnScreenEffect } from "@/src/shared/hooks/useOnScreenEffect";
 import clsx from "clsx";
+import useMediaQuery from "@/src/shared/hooks/useMediaQuery";
 
 const DressCode = (): React.ReactElement => {
+    const is1024px = useMediaQuery("(min-width: 1024px)");
     const [view, setView] = useState(false);
     const ref = useRef(null);
 
@@ -32,6 +34,19 @@ const DressCode = (): React.ReactElement => {
                     <div className={styles.main_container_photo_item}>
                         <ImageCustom src="./shared/images/dress_3.jpg" />
                     </div>
+                    {is1024px ? (
+                        <>
+                            <div className={styles.main_container_photo_item}>
+                                <ImageCustom src="./shared/images/dress_4.jpg" />
+                            </div>
+                            <div className={styles.main_container_photo_item}>
+                                <ImageCustom src="./shared/images/dress_5.jpg" />
+                            </div>
+                            <div className={styles.main_container_photo_item}>
+                                <ImageCustom src="./shared/images/dress_6.jpg" />
+                            </div>
+                        </>
+                    ) : null}
                 </div>
                 <div
                     ref={ref}
@@ -57,15 +72,19 @@ const DressCode = (): React.ReactElement => {
                     </div>
                 </div>
                 <div className={styles.main_container_photo}>
-                    <div className={styles.main_container_photo_item}>
-                        <ImageCustom src="./shared/images/dress_4.jpg" />
-                    </div>
-                    <div className={styles.main_container_photo_item}>
-                        <ImageCustom src="./shared/images/dress_5.jpg" />
-                    </div>
-                    <div className={styles.main_container_photo_item}>
-                        <ImageCustom src="./shared/images/dress_6.jpg" />
-                    </div>
+                    {!is1024px ? (
+                        <>
+                            <div className={styles.main_container_photo_item}>
+                                <ImageCustom src="./shared/images/dress_4.jpg" />
+                            </div>
+                            <div className={styles.main_container_photo_item}>
+                                <ImageCustom src="./shared/images/dress_5.jpg" />
+                            </div>
+                            <div className={styles.main_container_photo_item}>
+                                <ImageCustom src="./shared/images/dress_6.jpg" />
+                            </div>
+                        </>
+                    ) : null}
                 </div>
             </div>
         </div>

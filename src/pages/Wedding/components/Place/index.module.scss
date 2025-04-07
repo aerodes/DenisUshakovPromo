@@ -99,17 +99,17 @@
         @media (min-width: 500px) {
             width: 480px;
         }
-        @media (min-width: 1024px) {
-            width: 705px;
-            margin-top: 140px;
-            &_btn {
-                width: 400px;
-                top: -50px;
-                left: calc(50% - 200px);
+        // @media (min-width: 1024px) {
+        //     width: 705px;
+        //     margin-top: 140px;
+        //     &_btn {
+        //         width: 400px;
+        //         top: -50px;
+        //         left: calc(50% - 200px);
 
-                font-size: 36px;
-                line-height: 100px;
-            }
-        }
+        //         font-size: 36px;
+        //         line-height: 100px;
+        //     }
+        // }
     }
 }

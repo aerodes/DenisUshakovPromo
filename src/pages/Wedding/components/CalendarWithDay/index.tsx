@@ -3,7 +3,6 @@
 import ImageCustom from "@/src/shared/components/ImageCustom";
 import styles from "./index.module.scss";
 import { useEffect, useRef, useState } from "react";
-import useMediaQuery from "@/src/shared/hooks/useMediaQuery";
 import { useTypewriter } from "@/src/shared/hooks/useTypewriter";
 import { useOnScreenEffect } from "@/src/shared/hooks/useOnScreenEffect";
 
@@ -35,8 +34,6 @@ const CalendarWithDay = (): React.ReactElement => {
     };
 
     const [timeLeft, setTimeLeft] = useState(getDate());
-
-    const is1024px = useMediaQuery("(max-width: 1024px)");
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -87,26 +84,6 @@ const CalendarWithDay = (): React.ReactElement => {
                             <ImageCustom src="./shared/images/calendar.png" />
                         </div>
                     </div>
-                    {is1024px ? (
-                        <div ref={ref} className={styles.main_title_date}>
-                            {text} {!isFinished && <span className="cursor">|</span>}
-                            <style jsx>{`
-                                .cursor {
-                                    animation: blink 1s step-end infinite;
-                                }
-
-                                @keyframes blink {
-                                    from,
-                                    to {
-                                        opacity: 0;
-                                    }
-                                    50% {
-                                        opacity: 1;
-                                    }
-                                }
-                            `}</style>
-                        </div>
-                    ) : null}
                 </div>
                 <div>
                     <div className={styles.main_daysLeft}>
@@ -127,7 +104,6 @@ const CalendarWithDay = (): React.ReactElement => {
                     </div>
                 </div>
             </div>
-            {!is1024px ? (
                 <div ref={ref} className={styles.main_title_date}>
                     {text} {!isFinished && <span className="cursor">|</span>}
                     <style jsx>{`
@@ -146,7 +122,6 @@ const CalendarWithDay = (): React.ReactElement => {
                         }
                     `}</style>
                 </div>
-            ) : null}
         </div>
     );
 };
