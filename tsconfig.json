@@ -18,7 +18,7 @@
                 "name": "next"
             }
         ],
-        "types": ["./node_modules/telegram-webapps"],
+        "types": [],
         "paths": {
             "@/src/*": ["./src/*"],
             "@/public/*": ["./public/*"],
