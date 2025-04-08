@@ -1,11 +1,11 @@
 "use client";
 
-import SmoothRectangleShell from "@/src/shared/components/SmoothRectangleShell";
 import styles from "./index.module.scss";
 import useSafeLinkOpener from "@/src/shared/hooks/useSafeLinkOpener";
 
 const GuestChat = (): React.ReactElement => {
     const url = "https://t.me/+rMFbrJVGpEZjNDVi";
+
     const safeOpen = useSafeLinkOpener();
     const openLinkClick = (url: string) => {
         safeOpen(url, {
@@ -24,13 +24,8 @@ const GuestChat = (): React.ReactElement => {
                 воспоминания вместе!
             </div>
 
-            <div className={styles.main_container}>
-                <SmoothRectangleShell
-                    style={{ borderRadius: "100px" }}
-                    onClick={() => openLinkClick(url)}
-                >
-                    <div className={styles.main_container_text}>ВСТУПИТЬ В ЧАТ</div>
-                </SmoothRectangleShell>
+            <div className={styles.main_container} onClick={() => openLinkClick(url)}>
+                ВСТУПИТЬ В ЧАТ
             </div>
         </div>
     );

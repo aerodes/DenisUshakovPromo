@@ -33,7 +33,7 @@ const Contacts = (): React.ReactElement => {
         <div className={styles.main}>
             <div className={styles.main_title}>СВЯЗЬ С НАМИ</div>
             <div className={styles.main_container}>
-                <SmoothContacts srcAvatar="./shared/images/contacts_1.png" textFace="Развернуть">
+                <SmoothContacts srcAvatar="./shared/images/contacts_1.png" textFace="Денис">
                     <div className={styles.main_contacts}>
                         <div
                             className={styles.main_contacts_item}
@@ -55,7 +55,7 @@ const Contacts = (): React.ReactElement => {
                         </div>
                     </div>
                 </SmoothContacts>
-                <SmoothContacts srcAvatar="./shared/images/contacts_2.png" textFace="Развернуть">
+                <SmoothContacts srcAvatar="./shared/images/contacts_2.png" textFace="Кристина">
                     <div className={styles.main_contacts}>
                         <div
                             className={styles.main_contacts_item}

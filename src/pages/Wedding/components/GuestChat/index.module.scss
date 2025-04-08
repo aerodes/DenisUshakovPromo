@@ -35,7 +35,7 @@
                 font-size: 40px;
                 max-width: 1000px;
             }
-            
+
             &_center {
                 font-family: Cormorant Unicase;
                 font-size: 16px;
@@ -54,27 +54,65 @@
         }
     }
     &_container {
+        overflow: hidden;
+        position: relative;
+
         margin: auto;
-        width: 100%;
+        width: fit-content;
         display: flex;
         justify-content: center;
 
+        font-family: Cormorant Unicase;
+        font-size: 16px;
+        font-weight: 900;
+
         margin-top: 20px;
 
-        @media (min-width: 1024px) {
-            margin-top: 100px;
+        cursor: pointer;
+        background: #747474;
+        padding: 20px;
+        border-radius: 30px;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 250px;
+            margin-left: 80px;
+            background: #fff;
+            opacity: 0.5;
+            position: absolute;
+            left: -40px;
+            top: -100px;
+            z-index: 1;
+            transform: rotate(45deg);
+            transition: all 0.1s;
+            animation-name: slideme;
+            animation-duration: 3s;
+            animation-delay: 0.05s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
         }
 
-        &_text {
-            font-family: Cormorant Unicase;
-            font-size: 16px;
-            font-weight: 900;
+        @media (min-width: 1024px) {
+            font-size: 40px;
+            margin-top: 100px;
+            padding: 30px 50px;
+            border-radius: 60px;
+        }
 
-            margin: 0px 50px;
-
-            @media (min-width: 1024px) {
-                font-size: 40px;
-                margin: 0px 100px;
+        @keyframes slideme {
+            0% {
+                left: -30px;
+                margin-left: 0px;
+            }
+            30% {
+                left: 110%;
+                margin-left: 80px;
+            }
+            100% {
+                left: 110%;
+                margin-left: 80px;
             }
         }
     }

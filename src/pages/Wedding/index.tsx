@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useState } from "react";
 import CalendarWithDay from "./components/CalendarWithDay";
 import Confirmation from "./components/Confirmation";
 import Contacts from "./components/Contacts";
@@ -12,6 +15,7 @@ import Tips from "./components/Tips";
 import styles from "./index.module.scss";
 
 const Wedding = (): React.ReactElement => {
+    const [view, setView] = useState(false);
     return (
         <div className={styles.main}>
             <div>
@@ -33,20 +37,24 @@ const Wedding = (): React.ReactElement => {
                 <DressCode />
             </div>
             <div>
-                <Tips />
+                <Tips onFinish={() => setView(true)} />
             </div>
-            <div>
-                <GuestChat />
-            </div>
-            <div>
-                <OrganizationalIssues />
-            </div>
-            <div>
-                <Confirmation />
-            </div>
-            <div>
-                <Contacts />
-            </div>
+            {view ? (
+                <>
+                    <div>
+                        <GuestChat />
+                    </div>
+                    <div>
+                        <OrganizationalIssues />
+                    </div>
+                    <div>
+                        <Confirmation />
+                    </div>
+                    <div>
+                        <Contacts />
+                    </div>
+                </>
+            ) : null}
         </div>
     );
 };

@@ -3,6 +3,7 @@ import styles from "./index.module.scss";
 import React from "react";
 import ImageCustom from "../ImageCustom";
 import { useOutsideEventClick } from "../../hooks/useOutsideEventClick";
+import clsx from "clsx";
 const SmoothContacts = ({
     style,
     srcAvatar = "",
@@ -25,7 +26,7 @@ const SmoothContacts = ({
                 </div>
                 <div className={styles.mainShell_face_text}>{textFace}</div>
             </div>
-            <div className={viewInfo ? styles.mainShell_info : styles.mainShell_info_none}>
+            <div className={clsx(true && styles.mainShell_info, styles.mainShell_info_none)}>
                 {children}
             </div>
         </div>
