@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[42],{4063:(_,n,e)=>{(window.__NEXT_P=window.__NEXT_P||[]).push(["/Wedding/components/CalendarWithDay",function(){return e(8918)}])}},_=>{var n=n=>_(_.s=n);_.O(0,[965,918,636,593,792],()=>n(4063)),_N_E=_.O()}]);
