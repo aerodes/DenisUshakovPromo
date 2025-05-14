@@ -1,8 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function LinkBudgetCalculator() {
+    useEffect(() => {
+        document.title = "Программа";
+        const link: HTMLLinkElement =
+            document.querySelector("link[rel~='icon']") || document.createElement("link");
+        link.rel = "icon";
+        link.href = "/favicons/book.ico";
+        document.head.appendChild(link);
+    }, []);
+
     const [distance, setDistance] = useState(1); // км
     const [frequency, setFrequency] = useState(2400); // МГц
     const [powerTx, setPowerTx] = useState(20); // dBm
