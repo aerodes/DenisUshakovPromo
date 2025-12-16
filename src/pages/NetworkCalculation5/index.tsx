@@ -163,7 +163,7 @@ export default function SubnetPlanner() {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     style={{ width: "100%", fontFamily: "monospace" }}
-                    // onKeyDown={(e) => }
+                // onKeyDown={(e) => }
                 />
             </section>
 
